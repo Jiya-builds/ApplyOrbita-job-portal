@@ -61,10 +61,12 @@ export default function Navbar() {
 
         </ul>
 
-        {/* Button */}
-        <button className="bg-orange-500 text-white px-10 h-[54px] rounded-2xl text-[18px] font-semibold shadow-[0_6px_0_#111] hover:-translate-y-1 transition-all">
+        <Link
+  href="/contact"
+  className="bg-orange-500 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:bg-orange-600 transition-all duration-300"
+>
   Get Started →
-</button>
+</Link>
 
       </nav>
     </header>

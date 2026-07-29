@@ -1,5 +1,6 @@
 
 import Image from "next/image";
+import Link from "next/link";
 export default function Hero() {
   return (
     <section className="min-h-screen flex items-center bg-gradient-to-br from-orange-50 via-white to-blue-50">
@@ -28,13 +29,19 @@ export default function Hero() {
 
           <div className="mt-12 flex gap-6 flex wrap">
 
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-5 text-lg rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-              Get Started
-            </button>
+            <Link
+  href="/contact"
+  className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-5 text-lg rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 inline-flex items-center justify-center"
+>
+  Get Started
+</Link>
 
-            <button className="border-2 border-[#0F2D6B] text-[#0F2D6B] px-8 py-4 rounded-full font-semibold hover:bg-[#0F2D6B] hover:text-white transition-all duration-300">
-              Explore Jobs
-            </button>
+            <Link
+  href="/careers"
+  className="border-2 border-[#0F2D6B] text-[#0F2D6B] px-8 py-4 rounded-full font-semibold hover:bg-[#0F2D6B] hover:text-white transition-all duration-300 inline-flex items-center justify-center"
+>
+  Explore Jobs
+</Link>
 
           </div>
 
