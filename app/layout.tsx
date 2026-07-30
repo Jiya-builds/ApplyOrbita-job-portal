@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "ApplyOrbitA — Find Your Dream Internship & Job",
   description: "ApplyOrbitA connects talented students and professionals with internships, jobs, and career opportunities. 5000+ jobs posted, 1000+ trusted companies. Start your career journey today.",
   verification: {
-    google: "m7PucsIRwVmaYudf3ke0cGK_E4SkHnclp636im4tngc",
+    google: "EeBOO1F1gdXvhsnFlFwmq1D1VsN5j1eBbXAjXTxX1Qg",
   },
 };
 
