@@ -1,3 +1,4 @@
+"use client";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import Link from "next/link";
 
@@ -54,12 +55,21 @@ export default function ContactHero() {
               </Link>
 
 
-              <Link
-                href="#faq"
-                className="flex items-center gap-3 rounded-xl border-2 border-[#0F2D6B] px-8 py-4 font-semibold text-[#0F2D6B] transition hover:bg-[#0F2D6B] hover:text-white"
-              >
-                View FAQs
-              </Link>
+              <button
+  onClick={() => {
+    const faq = document.getElementById("faq");
+
+    if (faq) {
+      faq.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }}
+  className="flex items-center gap-3 rounded-xl border-2 border-[#0F2D6B] px-8 py-4 font-semibold text-[#0F2D6B] transition hover:bg-[#0F2D6B] hover:text-white"
+>
+  View FAQs
+</button>
 
 
             </div>

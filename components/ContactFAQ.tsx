@@ -47,7 +47,10 @@ export default function ContactFAQ() {
 
 
   return (
-    <section className="py-28 bg-white">
+    <section
+  id="faq"
+  className="py-28 bg-white"
+>
 
       <div className="max-w-5xl mx-auto px-6">
 
