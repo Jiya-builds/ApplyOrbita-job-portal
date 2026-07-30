@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   FileText,
   Briefcase,
@@ -183,16 +184,17 @@ export default function ServicesGrid() {
 
                 </div>
 
-                <button
-                  className={`mt-10 inline-flex items-center gap-2 font-semibold transition ${
-                    service.featured
-                      ? "text-orange-400 hover:text-orange-300"
-                      : "text-orange-500 hover:gap-3"
-                  }`}
-                >
-                  Learn More
-                  <ArrowRight size={18} />
-                </button>
+                <Link
+  href="/contact"
+  className={`mt-10 inline-flex items-center gap-2 font-semibold transition ${
+    service.featured
+      ? "text-orange-400 hover:text-orange-300"
+      : "text-orange-500 hover:gap-3"
+  }`}
+>
+  Learn More
+  <ArrowRight size={18} />
+</Link>
 
               </div>
 

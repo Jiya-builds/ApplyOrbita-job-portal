@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const countries = [
@@ -72,10 +73,13 @@ export default function Countries() {
                 {country.jobs}
               </div>
 
-              <button className="mt-10 flex items-center gap-2 text-orange-500 font-semibold transition-all duration-300 group-hover:gap-4">
-                Explore Opportunities
-                <ArrowRight size={18} />
-              </button>
+              <Link
+  href="/careers"
+  className="mt-10 flex items-center gap-2 text-orange-500 font-semibold transition-all duration-300 group-hover:gap-4"
+>
+  Explore Opportunities
+  <ArrowRight size={18} />
+</Link>
 
             </div>
 
