@@ -6,13 +6,17 @@ import { Check, Zap } from "lucide-react";
 const plans = [
   {
     title: "PROFESSIONAL",
-
+    oldPrice: "$449",
     price: "$349",
-
+    save: "Save 22%",
     badge: "ECONOMICAL",
 
     features: [
-      
+      {
+        title: "500 Applications",
+        description: "We apply to suitable USA job opportunities for you",
+        orange: true,
+      },
       {
         title: "Everything in Ignite +",
         description: "",
@@ -25,7 +29,7 @@ const plans = [
       },
       {
         title: "We Find Jobs",
-        description: "We find & apply to jobs for you",
+        description: "We find and apply to jobs for you",
         orange: false,
       },
       {
@@ -43,13 +47,17 @@ const plans = [
 
   {
     title: "EXECUTIVE",
-
+    oldPrice: "$699",
     price: "$599",
-
+    save: "Save 14%",
     badge: "MOST POPULAR",
 
     features: [
-
+      {
+        title: "1200 Applications",
+        description: "Extensive job application support for USA opportunities",
+        orange: true,
+      },
       {
         title: "Everything in Professional +",
         description: "",
@@ -57,18 +65,19 @@ const plans = [
       },
       {
         title: "1 Cover Letter",
-        description: "1 cover letter used for all applications",
+        description: "One professionally prepared cover letter",
         orange: false,
       },
       {
         title: "Emailing Recruiters",
-        description: "We personally reach out to recruiters for you",
+        description:
+          "We personally reach out to recruiters for you",
         orange: false,
       },
       {
         title: "Portfolio Website",
         description:
-          "We build a personal site to showcase your projects, skills & achievements",
+          "We build a personal website to showcase your projects, skills and achievements",
         orange: false,
       },
     ],
@@ -79,35 +88,35 @@ export default function Pricing() {
   return (
     <section
       id="plans"
-      className="relative bg-white py-24 overflow-hidden"
+      className="relative overflow-hidden bg-white py-24"
     >
       {/* Background dots */}
-      <div className="absolute top-10 right-0 h-72 w-72 opacity-20 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:18px_18px]" />
+      <div className="absolute right-0 top-10 h-72 w-72 opacity-20 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:18px_18px]" />
 
       <div className="absolute bottom-0 left-0 h-72 w-72 opacity-20 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:18px_18px]" />
 
-      <div className="relative max-w-6xl mx-auto px-6">
+      <div className="relative mx-auto max-w-6xl px-6">
 
-        {/* Heading */}
-        <div className="text-center mb-20">
+        {/* Section Heading */}
+        <div className="mb-20 text-center">
 
-          <span className="text-orange-500 font-bold uppercase tracking-[3px]">
+          <span className="font-bold uppercase tracking-[3px] text-orange-500">
             USA Pricing
           </span>
 
-          <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-black">
-            Simple & Transparent Pricing
+          <h2 className="mt-5 text-4xl font-extrabold text-black md:text-5xl">
+            Choose Your USA Plan
           </h2>
 
-          <p className="mt-5 max-w-2xl mx-auto text-gray-600 text-lg">
-            Choose the recruitment package that best matches your
-            career goals in the United States.
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-gray-600">
+            Simple and transparent pricing plans designed to help you
+            move closer to your career goals in the United States.
           </p>
 
         </div>
 
-        {/* Cards */}
-        <div className="grid lg:grid-cols-2 gap-10 items-start">
+        {/* Pricing Cards */}
+        <div className="grid items-start gap-10 lg:grid-cols-2">
 
           {plans.map((plan) => (
             <div
@@ -115,39 +124,39 @@ export default function Pricing() {
               className="relative pt-8"
             >
 
-              {/* Black top tab */}
+              {/* Black Plan Label */}
               <div className="absolute left-0 top-0 z-10">
 
-                <div className="relative bg-black text-white px-7 py-3 font-bold text-sm md:text-base">
+                <div className="relative bg-black px-7 py-3 text-sm font-bold tracking-wide text-white md:text-base">
 
                   {plan.title}
 
-                  {/* tab extension */}
+                  {/* Right extension */}
                   <div className="absolute right-[-18px] top-0 h-full w-[18px] bg-black" />
 
-                  {/* lower extension */}
-                  <div className="absolute right-[-32px] bottom-0 h-[7px] w-[32px] bg-black" />
+                  {/* Bottom extension */}
+                  <div className="absolute bottom-0 right-[-32px] h-[7px] w-[32px] bg-black" />
 
-                  {/* square decoration */}
-                  <div className="absolute right-[-58px] bottom-0 h-4 w-4 bg-black" />
+                  {/* Small square */}
+                  <div className="absolute bottom-0 right-[-58px] h-4 w-4 bg-black" />
 
                 </div>
 
               </div>
 
               {/* Card */}
-              <div className="relative bg-white border border-black rounded-[18px] shadow-sm overflow-hidden">
+              <div className="overflow-hidden rounded-[18px] border border-gray-300 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
 
-                {/* Orange top line */}
+                {/* Orange Top Border */}
                 <div className="h-1.5 bg-orange-500" />
 
                 <div className="p-7 md:p-9">
 
                   {/* Badge */}
-                  <div className="flex justify-end min-h-[32px]">
+                  <div className="flex min-h-[32px] justify-end">
 
                     <span
-                      className={`px-4 py-2 rounded-md text-xs font-bold text-white ${
+                      className={`rounded-md px-4 py-2 text-xs font-bold text-white ${
                         plan.badge === "MOST POPULAR"
                           ? "bg-orange-500"
                           : "bg-black"
@@ -159,31 +168,35 @@ export default function Pricing() {
                   </div>
 
                   {/* Price */}
-                  <div className="mt-2">
+                  <div className="mt-4">
 
                     <div className="flex items-center gap-3">
 
-                      <span className="text-gray-400 line-through text-sm md:text-base">
+                      <span className="text-sm text-gray-400 line-through md:text-base">
                         {plan.oldPrice}
                       </span>
 
-                      <span className="bg-orange-50 text-orange-600 px-3 py-1 rounded-full text-xs font-semibold">
+                      <span className="rounded-full bg-orange-50 px-3 py-1 text-xs font-semibold text-orange-600">
                         {plan.save}
                       </span>
 
                     </div>
 
-                    <h3 className="mt-1 text-5xl md:text-6xl font-extrabold text-black">
+                    <h3 className="mt-1 text-5xl font-extrabold text-black md:text-6xl">
                       {plan.price}
                     </h3>
+
+                    <p className="mt-2 text-sm text-gray-500">
+                      One-time payment
+                    </p>
 
                   </div>
 
                   {/* Divider */}
-                  <div className="mt-6 border-t border-gray-300" />
+                  <div className="mt-7 border-t border-gray-200" />
 
                   {/* Features */}
-                  <div className="mt-6 space-y-6">
+                  <div className="mt-7 space-y-6">
 
                     {plan.features.map((feature, index) => (
                       <div
@@ -191,11 +204,13 @@ export default function Pricing() {
                         className="flex items-start gap-4"
                       >
 
-                        <Zap
-                          size={20}
-                          fill="currentColor"
-                          className="mt-0.5 flex-shrink-0 text-orange-500"
-                        />
+                        <div className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-orange-50">
+                          <Zap
+                            size={14}
+                            fill="currentColor"
+                            className="text-orange-500"
+                          />
+                        </div>
 
                         <div>
 
@@ -210,7 +225,7 @@ export default function Pricing() {
                           </p>
 
                           {feature.description && (
-                            <p className="mt-1 text-sm text-gray-500 leading-5">
+                            <p className="mt-1 text-sm leading-6 text-gray-500">
                               {feature.description}
                             </p>
                           )}
@@ -222,10 +237,10 @@ export default function Pricing() {
 
                   </div>
 
-                  {/* Button */}
+                  {/* Start Now */}
                   <Link
                     href="/contact"
-                    className="mt-9 w-full bg-black hover:bg-orange-500 text-white py-4 rounded-lg font-bold text-center block transition-all duration-300"
+                    className="mt-10 block w-full rounded-lg bg-black py-4 text-center font-bold text-white transition-all duration-300 hover:bg-orange-500"
                   >
                     Start Now
                   </Link>
@@ -240,13 +255,14 @@ export default function Pricing() {
         </div>
 
         {/* Trust Strip */}
-        <div className="mt-14 bg-gray-100 rounded-2xl px-6 py-7">
+        <div className="mt-14 rounded-2xl bg-gray-100 px-6 py-7">
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
-            <div className="flex items-center gap-4 justify-center lg:justify-start">
+            {/* Secure Payment */}
+            <div className="flex items-center justify-center gap-4 lg:justify-start">
 
-              <div className="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center">
+              <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-black text-white">
                 <Check size={20} />
               </div>
 
@@ -262,9 +278,10 @@ export default function Pricing() {
 
             </div>
 
-            <div className="flex items-center gap-4 justify-center lg:justify-start">
+            {/* No Hidden Charges */}
+            <div className="flex items-center justify-center gap-4 lg:justify-start">
 
-              <div className="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center">
+              <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-black text-white">
                 <Check size={20} />
               </div>
 
@@ -280,9 +297,10 @@ export default function Pricing() {
 
             </div>
 
-            <div className="flex items-center gap-4 justify-center lg:justify-start">
+            {/* Expert Support */}
+            <div className="flex items-center justify-center gap-4 lg:justify-start">
 
-              <div className="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center">
+              <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-black text-white">
                 <Check size={20} />
               </div>
 
@@ -298,9 +316,10 @@ export default function Pricing() {
 
             </div>
 
-            <div className="flex items-center gap-4 justify-center lg:justify-start">
+            {/* Money Back */}
+            <div className="flex items-center justify-center gap-4 lg:justify-start">
 
-              <div className="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center">
+              <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-black text-white">
                 <Check size={20} />
               </div>
 
