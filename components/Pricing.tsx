@@ -1,461 +1,326 @@
 "use client";
 
-import { useState } from "react";
-import { Check } from "lucide-react";
+import Link from "next/link";
+import { Check, Zap } from "lucide-react";
 
-const pricingData = {
-  usa: {
-    country: "United States",
-    flag: "🇺🇸",
-    description:
-      "Choose the right package to maximize your chances of getting hired in the USA.",
+const plans = [
+  {
+    title: "PROFESSIONAL",
 
-    plans: [
+    price: "$349",
+
+    badge: "ECONOMICAL",
+
+    features: [
+      
       {
-        title: "Starter",
-        price: "$99",
-        badge: "",
-        features: [
-          "ATS Resume",
-          "150 Job Applications",
-          "Cover Letter",
-          "LinkedIn Review",
-          "Email Support",
-        ],
+        title: "Everything in Ignite +",
+        description: "",
+        orange: false,
       },
-
       {
-        title: "Professional",
-        price: "$199",
-        badge: "POPULAR",
-
-        features: [
-          "300 Job Applications",
-          "Resume Optimization",
-          "Priority Applications",
-          "Interview Preparation",
-          "Recruiter Support",
-        ],
+        title: "No Time Constraint",
+        description: "Until your applications are completed",
+        orange: false,
       },
-
       {
-        title: "Premium",
-        price: "$299",
-
-        badge: "",
-
-        features: [
-          "Unlimited Applications",
-          "Dedicated Recruiter",
-          "Career Consultation",
-          "Interview Coaching",
-          "Priority Support",
-        ],
+        title: "We Find Jobs",
+        description: "We find & apply to jobs for you",
+        orange: false,
+      },
+      {
+        title: "LinkedIn Makeover",
+        description: "Let recruiters come to you",
+        orange: false,
+      },
+      {
+        title: "Interview Prep Material",
+        description: "Resources to help you ace interviews",
+        orange: false,
       },
     ],
   },
 
-  uk: {
-    country: "United Kingdom",
-    flag: "🇬🇧",
+  {
+    title: "EXECUTIVE",
 
-    description:
-      "Professional recruitment packages designed for UK careers.",
+    price: "$599",
 
-    plans: [
+    badge: "MOST POPULAR",
+
+    features: [
+
       {
-        title: "Starter",
-
-        price: "£79",
-
-        badge: "",
-
-        features: [
-          "ATS Resume",
-          "150 Applications",
-          "UK CV Review",
-          "Email Support",
-          "Interview Tips",
-        ],
+        title: "Everything in Professional +",
+        description: "",
+        orange: false,
       },
-
       {
-        title: "Professional",
-
-        price: "£149",
-
-        badge: "POPULAR",
-
-        features: [
-          "300 Applications",
-          "Priority Matching",
-          "Recruiter Guidance",
-          "LinkedIn Review",
-          "Interview Preparation",
-        ],
+        title: "1 Cover Letter",
+        description: "1 cover letter used for all applications",
+        orange: false,
       },
-
       {
-        title: "Premium",
-
-        price: "£249",
-
-        badge: "",
-
-        features: [
-          "Unlimited Applications",
-          "Dedicated Recruiter",
-          "Career Coach",
-          "Priority Processing",
-          "Everything Included",
-        ],
+        title: "Emailing Recruiters",
+        description: "We personally reach out to recruiters for you",
+        orange: false,
+      },
+      {
+        title: "Portfolio Website",
+        description:
+          "We build a personal site to showcase your projects, skills & achievements",
+        orange: false,
       },
     ],
   },
-
-  australia: {
-    country: "Australia",
-
-    flag: "🇦🇺",
-
-    description:
-      "Apply confidently for verified opportunities across Australia.",
-
-    plans: [
-      {
-        title: "Starter",
-
-        price: "A$99",
-
-        badge: "",
-
-        features: [
-          "ATS Resume",
-          "150 Applications",
-          "Resume Review",
-          "Email Support",
-          "Verified Employers",
-        ],
-      },
-
-      {
-        title: "Professional",
-
-        price: "A$179",
-
-        badge: "POPULAR",
-
-        features: [
-          "300 Applications",
-          "Priority Matching",
-          "LinkedIn Optimization",
-          "Interview Preparation",
-          "Recruiter Support",
-        ],
-      },
-
-      {
-        title: "Premium",
-
-        price: "A$279",
-
-        badge: "",
-
-        features: [
-          "Unlimited Applications",
-          "Career Consultation",
-          "Dedicated Recruiter",
-          "Fast Processing",
-          "Premium Support",
-        ],
-      },
-    ],
-  },
-};
+];
 
 export default function Pricing() {
-  const [selectedCountry, setSelectedCountry] =
-    useState<keyof typeof pricingData>("uk");
-
-  const current = pricingData[selectedCountry];
-
   return (
     <section
       id="plans"
-      className="py-28 bg-gradient-to-b from-white via-orange-50/40 to-white"
+      className="relative bg-white py-24 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      {/* Background dots */}
+      <div className="absolute top-10 right-0 h-72 w-72 opacity-20 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:18px_18px]" />
+
+      <div className="absolute bottom-0 left-0 h-72 w-72 opacity-20 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:18px_18px]" />
+
+      <div className="relative max-w-6xl mx-auto px-6">
 
         {/* Heading */}
+        <div className="text-center mb-20">
 
-        <div className="text-center">
-
-          <span className="uppercase tracking-[4px] text-orange-500 font-semibold">
-            Career Packages
+          <span className="text-orange-500 font-bold uppercase tracking-[3px]">
+            USA Pricing
           </span>
 
-          <h2 className="mt-5 text-5xl font-bold text-[#0F2D6B]">
-
-            Choose Your Destination
-
+          <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-black">
+            Simple & Transparent Pricing
           </h2>
 
-          <p className="mt-6 max-w-3xl mx-auto text-lg leading-8 text-gray-600">
-
-            Select the country where you want to work.
-            We'll show the most suitable recruitment
-            packages for your destination.
-
+          <p className="mt-5 max-w-2xl mx-auto text-gray-600 text-lg">
+            Choose the recruitment package that best matches your
+            career goals in the United States.
           </p>
 
         </div>
 
-        {/* Country Selector */}
+        {/* Cards */}
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
 
-<div className="grid md:grid-cols-3 gap-8 mt-16">
-
-  {[
-    {
-      key: "usa",
-      flag: "🇺🇸",
-      title: "United States",
-      subtitle: "For Students & Professionals",
-    },
-    {
-      key: "uk",
-      flag: "🇬🇧",
-      title: "United Kingdom",
-      subtitle: "Graduate & Professional Jobs",
-    },
-    {
-      key: "australia",
-      flag: "🇦🇺",
-      title: "Australia",
-      subtitle: "Career Opportunities",
-    },
-  ].map((country) => (
-
-    <button
-      key={country.key}
-      onClick={() =>
-        setSelectedCountry(country.key as keyof typeof pricingData)
-      }
-      className={`group relative overflow-hidden rounded-[30px] border p-8 text-left transition-all duration-500 ${
-        selectedCountry === country.key
-          ? "bg-[#0F2D6B] text-white border-[#0F2D6B] shadow-2xl scale-105"
-          : "bg-white hover:border-orange-500 hover:-translate-y-2 hover:shadow-xl"
-      }`}
-    >
-
-      {/* Glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition"></div>
-
-      <div className="relative">
-
-        <div className="text-6xl">
-          {country.flag}
-        </div>
-
-        <h3 className="mt-6 text-3xl font-bold">
-          {country.title}
-        </h3>
-
-        <p className="mt-3 opacity-80 leading-7">
-          {country.subtitle}
-        </p>
-
-        <div className="mt-8 flex items-center justify-between">
-
-          <div>
-
-            <p className="text-sm opacity-70">
-              Available Plans
-            </p>
-
-            <h4 className="text-xl font-bold">
-              3 Packages
-            </h4>
-
-          </div>
-
-          <div
-            className={`w-12 h-12 rounded-full flex items-center justify-center transition ${
-              selectedCountry === country.key
-                ? "bg-orange-500"
-                : "bg-orange-100 text-orange-500 group-hover:bg-orange-500 group-hover:text-white"
-            }`}
-          >
-            →
-          </div>
-
-        </div>
-
-      </div>
-
-    </button>
-
-  ))}
-
-</div>
-        {/* Selected Country Heading */}
-
-        <div className="text-center mt-20">
-
-          <div className="text-6xl">
-            {current.flag}
-          </div>
-
-          <h2 className="mt-5 text-4xl font-bold text-[#0F2D6B]">
-            {current.country} Packages
-          </h2>
-
-          <p className="mt-5 text-lg text-gray-600 max-w-2xl mx-auto">
-            {current.description}
-          </p>
-
-        </div>
-
-        {/* Pricing Cards */}
-
-        <div className="grid lg:grid-cols-3 gap-8 mt-16">
-                    {current.plans.map((plan, index) => (
-
+          {plans.map((plan) => (
             <div
-              key={index}
-              className={`relative rounded-[30px] overflow-hidden transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl ${
-                plan.badge
-                  ? "bg-[#0F2D6B] text-white scale-105 shadow-2xl"
-                  : "bg-white border border-gray-200 hover:border-orange-400"
-              }`}
+              key={plan.title}
+              className="relative pt-8"
             >
-              {/* Trust Strip */}
 
-<div className="mt-20 rounded-[30px] bg-[#0F2D6B] px-10 py-8">
+              {/* Black top tab */}
+              <div className="absolute left-0 top-0 z-10">
 
-  <div className="grid md:grid-cols-4 gap-8 text-center text-white">
+                <div className="relative bg-black text-white px-7 py-3 font-bold text-sm md:text-base">
 
-    <div>
-      <h3 className="text-3xl">💳</h3>
-      <p className="mt-3 font-semibold">
-        One-Time Payment
-      </p>
-    </div>
+                  {plan.title}
 
-    <div>
-      <h3 className="text-3xl">🔒</h3>
-      <p className="mt-3 font-semibold">
-        No Hidden Charges
-      </p>
-    </div>
+                  {/* tab extension */}
+                  <div className="absolute right-[-18px] top-0 h-full w-[18px] bg-black" />
 
-    <div>
-      <h3 className="text-3xl">🌍</h3>
-      <p className="mt-3 font-semibold">
-        Verified Employers
-      </p>
-    </div>
+                  {/* lower extension */}
+                  <div className="absolute right-[-32px] bottom-0 h-[7px] w-[32px] bg-black" />
 
-    <div>
-      <h3 className="text-3xl">🎯</h3>
-      <p className="mt-3 font-semibold">
-        Expert Career Guidance
-      </p>
-    </div>
-
-  </div>
-
-</div>
-
-              {/* Popular Badge */}
-
-              {plan.badge && (
-
-                <div className="absolute top-5 right-5 bg-orange-500 text-white px-4 py-2 rounded-full text-xs font-bold tracking-wide">
-
-                  ⭐ {plan.badge}
+                  {/* square decoration */}
+                  <div className="absolute right-[-58px] bottom-0 h-4 w-4 bg-black" />
 
                 </div>
 
-              )}
+              </div>
 
-              {/* Top Border */}
+              {/* Card */}
+              <div className="relative bg-white border border-black rounded-[18px] shadow-sm overflow-hidden">
 
-              <div className="h-2 bg-gradient-to-r from-orange-500 via-red-500 to-orange-400"></div>
+                {/* Orange top line */}
+                <div className="h-1.5 bg-orange-500" />
 
-              <div className="p-10">
+                <div className="p-7 md:p-9">
 
-                <h3 className="text-3xl font-bold">
-                  {plan.title}
-                </h3>
+                  {/* Badge */}
+                  <div className="flex justify-end min-h-[32px]">
 
-                <p className="mt-8 text-sm uppercase tracking-[3px] opacity-70">
-                  Starting From
-                </p>
-
-                <h2 className="mt-2 text-6xl font-extrabold text-orange-500">
-                  {plan.price}
-                </h2>
-
-                <p className="mt-2 opacity-70">
-                  One-Time Package
-                </p>
-
-                <div className="my-10 border-t border-gray-300/20"></div>
-
-                <div className="space-y-5">
-
-                  {plan.features.map((feature, i) => (
-
-                    <div
-                      key={i}
-                      className="flex items-center gap-4"
+                    <span
+                      className={`px-4 py-2 rounded-md text-xs font-bold text-white ${
+                        plan.badge === "MOST POPULAR"
+                          ? "bg-orange-500"
+                          : "bg-black"
+                      }`}
                     >
+                      {plan.badge}
+                    </span>
 
-                      <div className="h-8 w-8 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0">
+                  </div>
 
-                        <Check
-                          size={16}
-                          className="text-orange-500"
-                        />
+                  {/* Price */}
+                  <div className="mt-2">
 
-                      </div>
+                    <div className="flex items-center gap-3">
 
-                      <span
-                        className={`${
-                          plan.badge
-                            ? "text-white"
-                            : "text-gray-700"
-                        }`}
-                      >
-                        {feature}
+                      <span className="text-gray-400 line-through text-sm md:text-base">
+                        {plan.oldPrice}
+                      </span>
+
+                      <span className="bg-orange-50 text-orange-600 px-3 py-1 rounded-full text-xs font-semibold">
+                        {plan.save}
                       </span>
 
                     </div>
 
-                  ))}
+                    <h3 className="mt-1 text-5xl md:text-6xl font-extrabold text-black">
+                      {plan.price}
+                    </h3>
+
+                  </div>
+
+                  {/* Divider */}
+                  <div className="mt-6 border-t border-gray-300" />
+
+                  {/* Features */}
+                  <div className="mt-6 space-y-6">
+
+                    {plan.features.map((feature, index) => (
+                      <div
+                        key={index}
+                        className="flex items-start gap-4"
+                      >
+
+                        <Zap
+                          size={20}
+                          fill="currentColor"
+                          className="mt-0.5 flex-shrink-0 text-orange-500"
+                        />
+
+                        <div>
+
+                          <p
+                            className={`font-semibold leading-6 ${
+                              feature.orange
+                                ? "text-orange-500"
+                                : "text-gray-800"
+                            }`}
+                          >
+                            {feature.title}
+                          </p>
+
+                          {feature.description && (
+                            <p className="mt-1 text-sm text-gray-500 leading-5">
+                              {feature.description}
+                            </p>
+                          )}
+
+                        </div>
+
+                      </div>
+                    ))}
+
+                  </div>
+
+                  {/* Button */}
+                  <Link
+                    href="/contact"
+                    className="mt-9 w-full bg-black hover:bg-orange-500 text-white py-4 rounded-lg font-bold text-center block transition-all duration-300"
+                  >
+                    Start Now
+                  </Link>
 
                 </div>
-
-                <button
-                  className={`mt-12 w-full rounded-xl py-4 font-semibold transition-all duration-300 ${
-                    plan.badge
-                      ? "bg-orange-500 hover:bg-orange-600 text-white"
-                      : "bg-[#0F2D6B] hover:bg-orange-500 text-white"
-                  }`}
-                >
-                  Choose Plan
-                </button>
 
               </div>
 
             </div>
-
           ))}
 
         </div>
 
-      </div>
+        {/* Trust Strip */}
+        <div className="mt-14 bg-gray-100 rounded-2xl px-6 py-7">
 
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div className="flex items-center gap-4 justify-center lg:justify-start">
+
+              <div className="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center">
+                <Check size={20} />
+              </div>
+
+              <div>
+                <p className="font-bold text-black">
+                  Secure Payment
+                </p>
+
+                <p className="text-sm text-gray-500">
+                  100% safe & secure
+                </p>
+              </div>
+
+            </div>
+
+            <div className="flex items-center gap-4 justify-center lg:justify-start">
+
+              <div className="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center">
+                <Check size={20} />
+              </div>
+
+              <div>
+                <p className="font-bold text-black">
+                  No Hidden Charges
+                </p>
+
+                <p className="text-sm text-gray-500">
+                  Transparent pricing
+                </p>
+              </div>
+
+            </div>
+
+            <div className="flex items-center gap-4 justify-center lg:justify-start">
+
+              <div className="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center">
+                <Check size={20} />
+              </div>
+
+              <div>
+                <p className="font-bold text-black">
+                  Expert Support
+                </p>
+
+                <p className="text-sm text-gray-500">
+                  We're here to help
+                </p>
+              </div>
+
+            </div>
+
+            <div className="flex items-center gap-4 justify-center lg:justify-start">
+
+              <div className="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center">
+                <Check size={20} />
+              </div>
+
+              <div>
+                <p className="font-bold text-black">
+                  Money-Back Policy
+                </p>
+
+                <p className="text-sm text-gray-500">
+                  7-day guarantee
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
     </section>
   );
 }

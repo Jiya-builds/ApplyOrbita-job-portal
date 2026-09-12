@@ -5,45 +5,45 @@ import { ArrowRight, Globe, Users, Briefcase, Star } from "lucide-react";
 
 export default function PricingHero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-orange-50 via-white to-blue-50 py-28">
+    <section className="relative overflow-hidden bg-white py-24">
 
-      {/* Background Blur */}
-      <div className="absolute -top-32 -left-24 h-80 w-80 rounded-full bg-orange-300/20 blur-3xl"></div>
+      {/* Background dots */}
+      <div className="absolute top-0 right-0 h-80 w-80 opacity-30 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:18px_18px]" />
 
-      <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-blue-300/20 blur-3xl"></div>
-
-      {/* Grid */}
-      <div className="absolute inset-0 opacity-[0.04] bg-[radial-gradient(#0F2D6B_1px,transparent_1px)] [background-size:22px_22px]" />
+      <div className="absolute bottom-0 left-0 h-64 w-64 opacity-20 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:18px_18px]" />
 
       <div className="relative max-w-7xl mx-auto px-6">
 
         {/* Heading */}
-
         <div className="text-center">
 
-          <span className="inline-block bg-orange-100 text-orange-600 px-5 py-2 rounded-full font-semibold">
+          <span className="inline-block text-orange-500 font-bold tracking-wide uppercase">
             Pricing Plans
           </span>
 
-          <h1 className="mt-8 text-6xl lg:text-7xl font-extrabold leading-tight text-[#0F2D6B]">
-            Choose Your
-            <br />
-            Perfect Career Plan
+          <h1 className="mt-5 text-5xl md:text-6xl lg:text-7xl font-extrabold text-black leading-tight">
+            Choose Your USA Plan
           </h1>
 
-          <p className="mt-8 max-w-3xl mx-auto text-xl leading-9 text-gray-600">
-            Whether you're applying for opportunities in the USA,
-            UK or Australia, ApplyOrbitA offers carefully designed
-            career packages to maximize your chances of getting hired.
+          <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-gray-600 leading-8">
+            We offer simple and transparent pricing plans to help you
+            land your dream job in the United States.
           </p>
 
-          {/* Buttons */}
+          {/* USA badge */}
+          <div className="mt-8 inline-flex items-center gap-3 rounded-full bg-gray-100 px-6 py-3">
+            <span className="text-2xl">🇺🇸</span>
+            <span className="font-semibold text-black">
+              USA Recruitment Plans Only
+            </span>
+          </div>
 
-          <div className="mt-12 flex flex-wrap justify-center gap-5">
+          {/* Buttons */}
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
 
             <Link
               href="#plans"
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-2 transition-all hover:scale-105"
+              className="bg-black hover:bg-orange-500 text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-2 transition-all duration-300"
             >
               View Plans
               <ArrowRight size={18} />
@@ -51,7 +51,7 @@ export default function PricingHero() {
 
             <Link
               href="/contact"
-              className="border-2 border-[#0F2D6B] text-[#0F2D6B] px-8 py-4 rounded-xl font-semibold hover:bg-[#0F2D6B] hover:text-white transition"
+              className="border-2 border-black text-black px-8 py-4 rounded-xl font-semibold hover:bg-black hover:text-white transition-all duration-300"
             >
               Contact Team
             </Link>
@@ -61,81 +61,59 @@ export default function PricingHero() {
         </div>
 
         {/* Stats */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-20">
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
+          <div className="bg-white border border-gray-200 rounded-2xl p-7 shadow-sm hover:shadow-lg transition">
+            <Globe size={38} className="text-orange-500" />
 
-          <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-xl hover:-translate-y-2 transition duration-300">
-
-            <Globe
-              size={45}
-              className="text-orange-500"
-            />
-
-            <h3 className="mt-5 text-4xl font-bold text-[#0F2D6B]">
-              3+
+            <h3 className="mt-5 text-3xl font-extrabold text-black">
+              USA
             </h3>
 
             <p className="mt-2 text-gray-500">
-              Countries Supported
+              Destination Supported
             </p>
-
           </div>
 
-          <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-xl hover:-translate-y-2 transition duration-300">
+          <div className="bg-white border border-gray-200 rounded-2xl p-7 shadow-sm hover:shadow-lg transition">
+            <Users size={38} className="text-orange-500" />
 
-            <Users
-              size={45}
-              className="text-orange-500"
-            />
-
-            <h3 className="mt-5 text-4xl font-bold text-[#0F2D6B]">
+            <h3 className="mt-5 text-3xl font-extrabold text-black">
               1000+
             </h3>
 
             <p className="mt-2 text-gray-500">
-              Happy Candidates
+              Candidates Supported
             </p>
-
           </div>
 
-          <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-xl hover:-translate-y-2 transition duration-300">
+          <div className="bg-white border border-gray-200 rounded-2xl p-7 shadow-sm hover:shadow-lg transition">
+            <Briefcase size={38} className="text-orange-500" />
 
-            <Briefcase
-              size={45}
-              className="text-orange-500"
-            />
-
-            <h3 className="mt-5 text-4xl font-bold text-[#0F2D6B]">
+            <h3 className="mt-5 text-3xl font-extrabold text-black">
               500+
             </h3>
 
             <p className="mt-2 text-gray-500">
-              Verified Opportunities
+              Opportunities
             </p>
-
           </div>
 
-          <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-xl hover:-translate-y-2 transition duration-300">
+          <div className="bg-white border border-gray-200 rounded-2xl p-7 shadow-sm hover:shadow-lg transition">
+            <Star size={38} className="text-orange-500" />
 
-            <Star
-              size={45}
-              className="text-orange-500"
-            />
-
-            <h3 className="mt-5 text-4xl font-bold text-[#0F2D6B]">
-              95%
+            <h3 className="mt-5 text-3xl font-extrabold text-black">
+              Expert
             </h3>
 
             <p className="mt-2 text-gray-500">
-              Candidate Satisfaction
+              Career Guidance
             </p>
-
           </div>
 
         </div>
 
       </div>
-
     </section>
   );
 }
