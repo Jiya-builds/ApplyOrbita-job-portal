@@ -111,7 +111,7 @@ export default function PricingCTA() {
                   </p>
 
                   <h4 className="text-black font-bold text-base md:text-xl break-all">
-                    support@applyorbita.com
+                    applyorbita@gmail.com
                   </h4>
 
                 </div>
