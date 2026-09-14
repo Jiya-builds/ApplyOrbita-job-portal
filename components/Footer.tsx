@@ -86,7 +86,7 @@ export default function Footer() {
             </h3>
 
             <p className="text-gray-300">
-              support@applyorbita.com
+              applyorbita@gmail.com
             </p>
 
             <p className="mt-3 text-gray-300">
