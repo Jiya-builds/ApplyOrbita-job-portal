@@ -22,19 +22,19 @@ export default function PricingHero() {
           </span>
 
           <h1 className="mt-5 text-5xl md:text-6xl lg:text-7xl font-extrabold text-black leading-tight">
-            Choose Your USA Plan
+            Choose Your Perfect Career Plan
           </h1>
 
           <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-gray-600 leading-8">
             We offer simple and transparent pricing plans to help you
-            land your dream job in the United States.
+            land your dream job.
           </p>
 
-          {/* USA badge */}
+          {/* Career Plans badge */}
           <div className="mt-8 inline-flex items-center gap-3 rounded-full bg-gray-100 px-6 py-3">
-            <span className="text-2xl">🇺🇸</span>
+            <span className="text-2xl">🌍</span>
             <span className="font-semibold text-black">
-              USA Recruitment Plans Only
+              Global Career Plans
             </span>
           </div>
 
@@ -67,11 +67,11 @@ export default function PricingHero() {
             <Globe size={38} className="text-orange-500" />
 
             <h3 className="mt-5 text-3xl font-extrabold text-black">
-              USA
+              3
             </h3>
 
             <p className="mt-2 text-gray-500">
-              Destination Supported
+              Destinations Supported
             </p>
           </div>
 
