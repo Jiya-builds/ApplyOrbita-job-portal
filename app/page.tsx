@@ -7,6 +7,7 @@ import Stats from "@/components/Stats";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
+import AIResumeCheck from "@/components/AIResumeCheck";
 
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <TrustedBy />
+      <AIResumeCheck />
       <Services />
       <WhyChoose />
       <FAQ/>
