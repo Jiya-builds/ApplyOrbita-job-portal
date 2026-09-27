@@ -8,8 +8,6 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
 import AIResumeCheck from "@/components/AIResumeCheck";
-
-
 export default function Home() {
   return (
     <main>
