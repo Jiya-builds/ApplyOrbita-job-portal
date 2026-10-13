@@ -1,14 +1,18 @@
+
 import ServiceCard from "./ServiceCard";
+import {
+  FileText,
+  BriefcaseBusiness,
+  Target,
+  Handshake,
+} from "lucide-react";
 
 export default function Services() {
   return (
-    <section className="py-24 bg-gray-50">
-
-      <div className="max-w-[1280px] mx-auto px-6">
-
+    <section className="bg-gray-50 py-24">
+      <div className="mx-auto max-w-[1280px] px-6">
         <div className="text-center">
-
-          <span className="text-orange-500 font-semibold uppercase tracking-wider">
+          <span className="font-semibold uppercase tracking-wider text-orange-500">
             Our Services
           </span>
 
@@ -18,44 +22,39 @@ export default function Services() {
             To Build Your Career
           </h2>
 
-          <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="mx-auto mt-6 max-w-3xl text-xl text-gray-600">
             ApplyOrbitA helps students and professionals find the
             right opportunities while helping companies hire the
             right talent efficiently.
           </p>
-
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
-
+        <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <ServiceCard
-            icon="📄"
+            icon={<FileText size={32} strokeWidth={1.8} />}
             title="Resume Building"
             description="Create professional ATS-friendly resumes that increase your chances of getting shortlisted."
           />
 
           <ServiceCard
-            icon="💼"
+            icon={<BriefcaseBusiness size={32} strokeWidth={1.8} />}
             title="Internships"
             description="Discover exciting internship opportunities from startups and leading companies."
           />
 
           <ServiceCard
-            icon="🎯"
+            icon={<Target size={32} strokeWidth={1.8} />}
             title="Job Matching"
             description="Get personalized job recommendations based on your skills and interests."
           />
 
           <ServiceCard
-            icon="🤝"
+            icon={<Handshake size={32} strokeWidth={1.8} />}
             title="Career Guidance"
             description="Receive expert guidance to prepare for interviews and grow your career."
           />
-
         </div>
-
       </div>
-
     </section>
   );
 }
