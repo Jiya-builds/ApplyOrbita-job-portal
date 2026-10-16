@@ -416,7 +416,7 @@ export default function Pricing() {
               },
               {
                 title: "Money-Back Policy",
-                description: "7-day guarantee",
+                description: "40-day guarantee",
               },
             ].map((item) => (
               <div
